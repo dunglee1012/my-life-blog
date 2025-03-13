@@ -13,8 +13,6 @@ Hi everyone, I'm **Dũng**, but my friends call me **Dle (Đờ le)**. I'm curre
 I feel that having a **personal project** like this can help me a lot when looking for new opportunities. Hopefully, it will make a great impression on recruiters by showcasing my enthusiasm, passion, and curiosity.  
 Even the toughest recruiter might melt under the charm of my "strange yet lovable" personality (not my words, my female colleagues often tell me I'm cute and handsome 🤣).  
 
----
-
 # Project Information  
 
 This project is a **personal blog** built using **Next.js** and **Firebase**, allowing the owner to post blogs while visitors can comment and rate posts.
@@ -41,7 +39,6 @@ This project is a **personal blog** built using **Next.js** and **Firebase**, al
 - **Vercel** – A cloud platform optimized for deploying Next.js applications. It provides automatic builds and previews.  
 - **GitHub** – Used for version control, allowing collaboration and CI/CD integration.  
 
----
 
 ## 📌 How to Set Up the Project  
 
@@ -72,7 +69,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
 
 ## Learn More about Next.js
 
