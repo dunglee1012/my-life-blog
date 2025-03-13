@@ -20,25 +20,23 @@ This project is a **personal blog** built using **Next.js** and **Firebase**, al
 ## 🛠 Technologies Used  
 
 ### 🚀 Frontend (UI & Client-side)  
-- **Next.js** – A React framework optimized for SEO and performance. It allows server-side rendering (SSR) and static site generation (SSG) for fast page loads.  
+- **Next.js** – A React framework optimized for SEO and performance.
 - **React.js** – A component-based JavaScript library for building dynamic user interfaces.  
-- **Tailwind CSS** *(Optional)* – A utility-first CSS framework that helps style components quickly and efficiently.  
+- **Tailwind CSS** – A utility-first CSS framework that helps style components quickly and efficiently.  
 
 ### 🗄️ Backend & Database  
-- **Firebase Firestore** – A NoSQL cloud database that stores blog posts and comments. It supports real-time updates for live interactions.  
-- **Firebase Authentication** – Provides secure user authentication with Google login (only the owner can post blogs).  
+- **Firebase Firestore** – A NoSQL cloud database that stores blog posts and comments also supports real-time updates.
+- **Firebase Authentication** – Provides secure user authentication with Google login (Still Working On It).
 - **Next.js API Routes** – Used to handle backend logic, such as managing comments and likes, without needing a separate backend server.  
 
 ### ⚡ Features & Optimization  
 - **Next.js ISR (Incremental Static Regeneration)** – Combines static generation and real-time updates, improving SEO and performance while reducing Firebase reads.
 - **Next.js API Routes** – Allows the creation of serverless functions within the app, removing the need for an external backend.  
-- **ESLint + Prettier** – Ensures clean, formatted, and error-free code.  
-- **Turbopack/Webpack** – Optimizes build speed and performance in development.  
+- **Webpack** – Optimizes build speed and performance in development.  
 
 ### ☁️ Deployment & Hosting  
-- **Vercel** – A cloud platform optimized for deploying Next.js applications. It provides automatic builds and previews.  
-- **GitHub** – Used for version control, allowing collaboration and CI/CD integration.  
-
+- **Vercel** – A cloud platform optimized for deploying Next.js applications also provides automatic builds and previews.  
+- **GitHub** – Version control.
 
 ## 📌 How to Set Up the Project  
 
@@ -57,7 +55,7 @@ To run this project locally, follow these steps:
    ```terminal
    npm install
    ```
-1. **Clone the repository**
+4. **Clone the repository**
    ```terminal
    npm run dev
    ```
@@ -66,9 +64,6 @@ To run this project locally, follow these steps:
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 
 ## Learn More about Next.js
 
