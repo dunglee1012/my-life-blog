@@ -1,6 +1,7 @@
 # Introduction
 
-Hello everyone! If you're looking at this project, it means you're either a very close friend of mine... or a recruiter. Regardless of who you are, I hope you enjoy this masterpiece (well, it's a masterpiece in my heart 😵‍💫).  
+Hello everyone! If you're reading this, you're either a close friend of mine or a recruiter. Either way, welcome to my personal blog project! 🚀
+This project is special to me—it's my way of expressing thoughts I wouldn't usually say out loud (or maybe I’m just too lazy to say them 😵‍💫).
 
 ### About Me  
 
@@ -9,13 +10,13 @@ I once thought, "Why not create a website that can express the things I can't sa
 
 Enough chit-chat...  
 
-Hi everyone, I'm **Dũng**, but my friends call me **Dle (Đờ le)**. I'm currently 24 years old and working as a developer for an outsourcing company.  
-I feel that having a **personal project** like this can help me a lot when looking for new opportunities. Hopefully, it will make a great impression on recruiters by showcasing my enthusiasm, passion, and curiosity.  
-Even the toughest recruiter might melt under the charm of my "strange yet lovable" personality (not my words, my female colleagues often tell me I'm cute and handsome 🤣).  
+Hi, I'm Dũng, but my friends call me Dle (Đờ le).
+I'm 24 years old and currently working as a developer at an outsourcing company.
 
+I created this blog as a personal project to showcase my development skills and passion for coding. I believe having a portfolio project like this can open up new career opportunities. Hopefully, it will make a strong impression on recruiters by demonstrating my enthusiasm and curiosity.
 # Project Information  
 
-This project is a **personal blog** built using **Next.js** and **Firebase**, allowing the owner to post blogs while visitors can comment and rate posts.
+This project is a **personal blog** built using **Next.js** and **Firebase**, It allows the owner (me) to post blogs while visitors can comment and rate posts.
 
 ## 🛠 Technologies Used  
 
@@ -31,7 +32,6 @@ This project is a **personal blog** built using **Next.js** and **Firebase**, al
 
 ### ⚡ Features & Optimization  
 - **Next.js ISR (Incremental Static Regeneration)** – Combines static generation and real-time updates, improving SEO and performance while reducing Firebase reads.
-- **Next.js API Routes** – Allows the creation of serverless functions within the app, removing the need for an external backend.  
 - **Webpack** – Optimizes build speed and performance in development.  
 
 ### ☁️ Deployment & Hosting  
@@ -55,7 +55,7 @@ To run this project locally, follow these steps:
    ```terminal
    npm install
    ```
-4. **Clone the repository**
+4. **Run the development server**
    ```terminal
    npm run dev
    ```
