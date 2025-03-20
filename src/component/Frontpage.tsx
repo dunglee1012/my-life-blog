@@ -1,20 +1,29 @@
-'use client';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useRouter } from "next/navigation";
+import "@/styles/frontpage.css";
 
 export default function FrontPage() {
     const router = useRouter();
 
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen">
-            <h1 className="text-4xl font-bold text-center mb-4">Welcome! I'm thrilled to have you here, let's make some memories.</h1>
-            <p className="text-lg text-gray-600 mb-6">What you about to see here is my blog, my life,...story about me. Enjoyyyy!!!</p>
+        <main className="relative w-full h-screen flex items-center justify-center bg-gray-100">
+            <div className="absolute inset-0 flex w-full h-full gap-2">
+                <div className="w-1/3 h-full">
+                    <img src="/home/image1.jpg" alt="Image 1" className="w-full h-full object-cover" />
+                </div>
+                <div className="w-1/3 h-full">
+                    <img src="/home/image1.jpg" alt="Image 2" className="w-full h-full object-cover" />
+                </div>
+                <div className="w-1/3 h-full">
+                    <img src="/home/image1.jpg" alt="Image 3" className="w-full h-full object-cover" />
+                </div>
+            </div>
 
-            <button
-                onClick={() => router.push('/home')}
-                className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition"
-            >
-                Let's goooooo! 🚀
-            </button>
+            <div className="absolute bottom-0 left-0 w-full flex justify-center">
+                <div className="bg-white w-3/5 text-center p-6 shadow-lg">
+                    <h2 className="font-ptserif text-5xl font-bold text-gray-900">My Life. My Blog.</h2>
+                </div>
+            </div>
         </main>
     );
 }
