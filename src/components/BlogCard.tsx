@@ -1,6 +1,6 @@
 import React from "react";
 import { formatDate, capitalizeFirstLetter, truncateText } from "@/utils/helper";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface BlogCardProps {
     id: string;

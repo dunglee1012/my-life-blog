@@ -24,13 +24,23 @@ export const fetchBlogs = async (): Promise<Blog[]> => {
     }
 };
 
-export const fetchBlogById = async (id: string) => {
+export const fetchBlogById = async (id: string): Promise<Blog | null> => {
     try {
         const docRef = doc(db, "blogs", id);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-            return { id: docSnap.id, ...docSnap.data() };
+            const data = docSnap.data();
+            return {
+                id: docSnap.id,
+                title: data.Title,
+                category: data.Category,
+                description: data.Description,
+                title_image: data["Title Image"],
+                content: data.Content || [],
+                date_created: data["Date Created"]?.toDate().toISOString() || "",
+                read_time: data["Read Time"],
+            };
         } else {
             console.log("No such blog!");
             return null;
@@ -40,3 +50,4 @@ export const fetchBlogById = async (id: string) => {
         throw error;
     }
 };
+
