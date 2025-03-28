@@ -1,6 +1,7 @@
 import React from "react";
 import { formatDate, capitalizeFirstLetter, truncateText } from "@/utils/helper";
 import { useRouter } from "next/navigation";
+import { translate } from "@/locales/locale";
 
 interface BlogCardProps {
     id: string;
@@ -30,7 +31,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, title, description, title_image
                     onClick={() => router.push(`/blog/${id}`)}
                     className="text-blue-600 font-semibold hover:text-blue-800 transition duration-200"
                 >
-                    Read More
+                    {translate("blog_card.read_more")}
                 </button>
             </div>
         </div>

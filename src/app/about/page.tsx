@@ -14,10 +14,10 @@ export default function About() {
                     <hr className="border-t-1 border-gray-800 my-8" />
                     {/* Images below the paragraph */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <img src="/home/image1.jpg" alt="image1" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image2" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image3" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image4" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image1" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image2" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image3" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image4" className="w-full h-auto object-cover rounded-lg" />
                     </div>
 
                     <p className="text-lg text-gray-700 mb-4">
@@ -30,10 +30,10 @@ export default function About() {
 
                     {/* Images below the paragraph */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <img src="/home/image1.jpg" alt="image5" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image6" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image7" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image8" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image5" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image6" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image7" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image8" className="w-full h-auto object-cover rounded-lg" />
                     </div>
 
                     <p className="text-lg text-gray-700 mb-4">
@@ -45,10 +45,10 @@ export default function About() {
 
                     {/* Images below the paragraph */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <img src="/home/image1.jpg" alt="image9" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image10" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image11" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image12" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image9" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image10" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image11" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image12" className="w-full h-auto object-cover rounded-lg" />
                     </div>
                     <p className="text-lg text-gray-700">
                         I’m constantly striving to improve my craft and learn new techniques in photography, editing, and even
@@ -57,10 +57,10 @@ export default function About() {
                     </p>
                     <hr className="border-t-1 border-gray-800 my-8" />
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <img src="/home/image1.jpg" alt="image9" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image10" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image11" className="w-full h-auto object-cover rounded-lg" />
-                        <img src="/home/image1.jpg" alt="image12" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image9" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image10" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image11" className="w-full h-auto object-cover rounded-lg" />
+                        <img src="/asset/image1.jpg" alt="image12" className="w-full h-auto object-cover rounded-lg" />
                     </div>
                     <p className="text-lg text-gray-700">
                         And of course, the most important part in the life of a developer is coding. Life at SmartOSC is the first challenge
@@ -72,7 +72,7 @@ export default function About() {
                 {/* CV Section */}
                 <section className="">
                     <p className="text-left text-lg text-gray-700 mb-4">Here is my CV:</p>
-                    <embed src="/home/CV_LeNguyenQuangDung_JuniorSoftwareDeveloper.pdf.pdf" type="application/pdf" width="100%" height="600px" />
+                    <embed src="/asset/CV_LeNguyenQuangDung_JuniorSoftwareDeveloper.pdf.pdf" type="application/pdf" width="100%" height="600px" />
                 </section>
             </div>
         </main>
