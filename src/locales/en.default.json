@@ -1,0 +1,22 @@
+{
+    "front_page": {
+        "title": "My Life - My Blog"
+    },
+    "nav_bar": {
+        "home": "Home",
+        "blog": "Blog",
+        "about": "About"
+    },
+    "homepage": {
+        "title": "Hello and Welcome, feel free to see something, or hang around",
+        "section_blog_latest": "Latest blog",
+        "page_loading": "Loading..."
+    },
+    "blog_card": {
+        "read_more": "Read more"
+    },
+    "footer": {
+        "about_me": "About Me",
+        "contact": "Contact"
+    }
+}
