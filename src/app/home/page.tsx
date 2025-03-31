@@ -27,7 +27,7 @@ export default function Homepage() {
     }, []);
 
     return (
-        <main className="flex flex-col w-full center">
+        <main className="flex flex-col w-full center mb-30">
             <div className="w-full justify-center items-center flex flex-col">
                 <img src="/asset/home-banner.jpg" alt="banner" className="w-full max-w-screen-xl mx-auto" />
                 <p className="items-center text-center text-2xl">
