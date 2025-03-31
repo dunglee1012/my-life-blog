@@ -41,10 +41,11 @@ export default function Navbar() {
 			</div>
 
 			<div className="w-1/5 flex space-x-10 justify-end">
-				<a href="" className="w-10 h-10 text-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-fb.png" /></a>
-				<a href="" className="w-10 h-10 text-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-instagram.png" /></a>
-				<a href="" className="w-10 h-10 text-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-linkedin.png" /></a>
-				<a href="" className="w-10 h-10 text-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-github.png" /></a>
+				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-fb.png" /></a>
+				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-instagram.png" /></a>
+				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-linkedin.png" /></a>
+				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-github.png" /></a>
+				<a href="/login" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-secret.png" /></a>
 			</div>
 		</nav>
 	);

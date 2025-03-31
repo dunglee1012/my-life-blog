@@ -18,5 +18,17 @@
     "footer": {
         "about_me": "About Me",
         "contact": "Contact"
+    },
+    "login": {
+        "welcome_title": "This is where my secret lives",
+        "username": "Username",
+        "password": "Password",
+        "forgot_password": "Forgot password?",
+        "register": "Register",
+        "submit": "Login",
+        "remember_me": "Remember me",
+        "google_title": "Login with Google",
+        "linkden_title": "Login with Linkden",
+        "facebook_title": "Login with Facebook"
     }
 }
