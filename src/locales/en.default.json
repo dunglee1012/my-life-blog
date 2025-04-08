@@ -29,6 +29,14 @@
         "remember_me": "Remember me",
         "google_title": "Login with Google",
         "linkden_title": "Login with Linkden",
-        "facebook_title": "Login with Facebook"
+        "facebook_title": "Login with Facebook",
+        "error_default": "Login failed.",
+        "error_user_not_found": "User not found.",
+        "error_wrong_password": "Incorrect password.",
+        "error_invalid_email": "Invalid email.",
+        "error_invalid_credential": "Incorrect email or password.",
+        "error_too_many_requests": "Too many requests, please try again later.",
+        "not_a_member": "Not a member?",
+        "sign_up": "Sign up"
     }
 }
