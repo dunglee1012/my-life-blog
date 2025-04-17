@@ -1,5 +1,5 @@
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import { db } from "../../../firebaseConfig";
+import { db } from "@root/firebaseConfig";
 import { Blog } from "@/interfaces/blog";
 
 export const fetchBlogs = async (): Promise<Blog[]> => {

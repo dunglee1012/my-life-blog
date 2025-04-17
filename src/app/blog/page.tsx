@@ -1,28 +1,19 @@
 "use client"
-import { useEffect, useState } from "react";
-import { fetchBlogs } from "@/services/blogs";
-import { Blog } from "@/interfaces/blog";
+import { useBlogs } from '@/hooks/blog/useBlogs';
 import BlogCard from "@/components/BlogCard";
+import FullScreenLoading from "@/components/FullScreenLoading";
 
 export default function Homepage() {
-    const [blogs, setBlogs] = useState<Blog[]>([]);
-    const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState(true);
+    const {
+        blogs,
+        error,
+        loading
+    } = useBlogs();
 
-    useEffect(() => {
-        const getBlogs = async () => {
-            try {
-                const data = await fetchBlogs();
-                setBlogs(data);
-            } catch (err) {
-                console.error("Error fetching blogs:", err);
-                setError("Failed to fetch blogs.");
-            } finally {
-                setLoading(false);
-            }
-        };
-        getBlogs();
-    }, []);
+    if (loading) {
+        return (<FullScreenLoading />
+        );
+    }
 
     return (
         <div className="flex flex-col-reverse md:flex-row w-full max-w-6xl m-auto">
@@ -32,22 +23,19 @@ export default function Homepage() {
                     <h1 className="text-4xl font-bold">From the blog</h1>
                     <p className="text-lg text-gray-500">All the blogs so far...</p>
                 </div>
-                {loading ? (
-                    <p className="text-center text-gray-500 text-lg">Loading...</p>
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-                        {blogs.map(blog => (
-                            <BlogCard
-                                key={blog.id}
-                                id={blog.id}
-                                title={blog.title}
-                                description={blog.description}
-                                title_image={blog.title_image}
-                                date_created={blog.date_created}
-                            />
-                        ))}
-                    </div>
-                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+                    {blogs.map(blog => (
+                        <BlogCard
+                            key={blog.id}
+                            id={blog.id}
+                            title={blog.title}
+                            description={blog.description}
+                            title_image={blog.title_image}
+                            date_created={blog.date_created}
+                        />
+                    ))}
+                </div>
             </div>
 
             {/* Vertical Divider */}
@@ -81,7 +69,7 @@ export const leatestPosts = [
         id: "1",
         title: "Transform your winter blues into winter creativity",
         description: "Create a blog post subtitle that summarizes your post in a few short, punchy sentences.",
-        title_image: "/home/image1.jpg",
+        title_image: "/asset/image1.jpg",
         date: "March 21, 2025",
         date_created: "2 min",
     },
@@ -89,7 +77,7 @@ export const leatestPosts = [
         id: "12",
         title: "5 reasons to wake up at 5am",
         description: "Create a blog post subtitle that summarizes your post in a few short, punchy sentences.",
-        title_image: "/home/image1.jpg",
+        title_image: "/asset/image1.jpg",
         date: "March 21, 2025",
         date_created: "2 min",
     },
@@ -97,7 +85,7 @@ export const leatestPosts = [
         id: "123",
         title: "5 reasons to wake up at 5am",
         description: "Create a blog post subtitle that summarizes your post in a few short, punchy sentences.",
-        title_image: "/home/image1.jpg",
+        title_image: "/asset/image1.jpg",
         date: "March 21, 2025",
         date_created: "2 min",
     },

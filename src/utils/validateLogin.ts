@@ -30,3 +30,18 @@ export const validateLogin = (email: string, password: string): LoginValidationR
 
     return { isValid, errors };
 };
+
+export const validateEmail = (email: string): LoginValidationResult => {
+    const errors: Record<string, string> = {};
+    let isValid = true;
+
+    if (!email) {
+        errors.email = "Email is required.";
+        isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        errors.email = "Invalid email format.";
+        isValid = false;
+    }
+
+    return { isValid, errors };
+};

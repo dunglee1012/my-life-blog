@@ -1,7 +1,9 @@
 import { translate } from "@/locales/locale";
+import { useUserProfile } from "@/hooks/user/hookUser";
 
 export default function Navbar() {
 	const linkClass = "font-bold rounded-lg px-3 py-2 hover:bg-gray-100 hover:text-gray-900";
+	const { profile } = useUserProfile();
 
 	return (
 		<nav className="flex sticky items-center w-full px-6 py-4 space-x-4 bg-white shadow-md">
@@ -45,7 +47,10 @@ export default function Navbar() {
 				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-instagram.png" /></a>
 				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-linkedin.png" /></a>
 				<a href="" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-github.png" /></a>
-				<a href="/login" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-secret.png" /></a>
+				{profile ?
+				(<a href="/mypage" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-secret.png" /></a>)
+				: (<a href="/auth" className="fillRuletext-gray-500 bg-white hover:bg-gray-100"><img src="/asset/icon-secret.png" /></a>) }
+				
 			</div>
 		</nav>
 	);

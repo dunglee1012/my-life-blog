@@ -10,7 +10,7 @@ export default function LayoutClientWrapper({
     children: React.ReactNode;
 }) {
     const pathname = usePathname();
-    const isLoginPage = pathname === "/login";
+    const isLoginPage = pathname === "/login" || "/auth/forgotpassword";
 
     return (
         <>

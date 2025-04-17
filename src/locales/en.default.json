@@ -10,7 +10,8 @@
     "homepage": {
         "title": "Hello and Welcome, feel free to see something, or hang around",
         "section_blog_latest": "Latest blog",
-        "page_loading": "Loading..."
+        "page_loading": "Loading...",
+        "welcome_user": "Welcome"
     },
     "blog_card": {
         "read_more": "Read more"
@@ -21,7 +22,7 @@
     },
     "login": {
         "welcome_title": "This is where my secret lives",
-        "username": "Username",
+        "username": "Email",
         "password": "Password",
         "forgot_password": "Forgot password?",
         "register": "Register",
@@ -37,6 +38,29 @@
         "error_invalid_credential": "Incorrect email or password.",
         "error_too_many_requests": "Too many requests, please try again later.",
         "not_a_member": "Not a member?",
-        "sign_up": "Sign up"
+        "sign_up": " Sign up"
+    },
+    "mypage": {
+        "navigate": "Navigate",
+        "profile": "Profile",
+        "account_settings": "Account Settings",
+        "sign_out": "Sign Out",
+        "personal_info": "Personal Information",
+        "personal_info_response": "* It's our responsibility to protect your privacy",
+        "full_name": "Full Name",
+        "email": "Email",
+        "phone_number": "Phone Number",
+        "address": "Address"
+    },
+    "forgot_password": {
+        "welcome_title": "Forgot something?",
+        "change_password": "Change Password",
+        "email": "Email",
+        "password": "New Password",
+        "reenter_new_Password": "Re-enter New Password",
+        "forgot_password": "Forgot password?",
+        "register": "Register",
+        "sign_up": " Sign up",
+        "send_reset_link": "Send Link"
     }
 }
