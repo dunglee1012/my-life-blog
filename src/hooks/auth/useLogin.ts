@@ -31,18 +31,18 @@ export const useLogin = () => {
             await signInWithEmailAndPassword(auth, email, password);
             router.push("/home");
         } catch (err: any) {
-            let message = translate("login.error_default");
+            let message = translate("error.error_default");
 
             if (err.code === "auth/user-not-found") {
-                message = translate("login.error_user_not_found");
+                message = translate("error.error_user_not_found");
             } else if (err.code === "auth/wrong-password") {
-                message = translate("login.error_wrong_password");
+                message = translate("error.error_wrong_password");
             } else if (err.code === "auth/invalid-email") {
-                message = translate("login.error_invalid_email");
+                message = translate("error.error_invalid_email");
             } else if (err.code === "auth/invalid-credential") {
-                message = translate("login.error_invalid_credential");
+                message = translate("error.error_invalid_credential");
             } else if (err.code === "auth/too-many-requests") {
-                message = translate("login.error_too_many_requests");
+                message = translate("error.error_too_many_requests");
             }
 
             setError(message);

@@ -1,4 +1,4 @@
-// utils/validateLogin.ts
+import { translate } from "@/locales/locale";
 
 export interface LoginValidationResult {
     isValid: boolean;
@@ -13,18 +13,21 @@ export const validateLogin = (email: string, password: string): LoginValidationR
     let isValid = true;
 
     if (!email) {
-        errors.email = "Email is required.";
+        errors.email = translate("error.error_missing");
         isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-        errors.email = "Invalid email format.";
+        errors.email = translate("error.error_invalid_email");
         isValid = false;
     }
 
     if (!password) {
-        errors.password = "Password is required.";
+        errors.password = translate("error.error_password_missing");
         isValid = false;
     } else if (password.length < 8) {
-        errors.password = "Password must be at least 8 characters.";
+        errors.password = translate("error.error_password_invalid");
+        isValid = false;
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])/.test(password)) {
+        errors.password = translate("error.error_password_regex");
         isValid = false;
     }
 

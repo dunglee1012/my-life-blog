@@ -52,7 +52,7 @@ const ForgotPasswordPage = () => {
 
 			<div>
 				<p className="mt-10 text-center text-sm/6 text-gray-500">{translate("login.not_a_member")}
-					<a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+					<a href="/auth/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
 						{translate("forgot_password.sign_up")}
 					</a>
 				</p>

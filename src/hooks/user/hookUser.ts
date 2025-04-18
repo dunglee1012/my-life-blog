@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useFireBaseAuthState } from "@/hooks/auth/useAuth";
 import { getUserProfile } from "@/services/users/userService";
+import { User } from "firebase/auth";
 
 export const useUserProfile = () => {
     const { user, loading: authLoading } = useFireBaseAuthState();

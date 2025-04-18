@@ -2,6 +2,7 @@
 import { translate } from "@/locales/locale";
 import { useLogin } from "@/hooks/auth/useLogin";
 import Link from "next/link";
+import SocialAuthButton from "@/components/SocialAuthButton";
 
 export default function LoginPage() {
 	const {
@@ -87,35 +88,17 @@ export default function LoginPage() {
 						</button>
 					</div>
 
-					<div className="flex flex-col gap-2">
-						<button className="justify-center flex items-center bg-white border border-gray-300 rounded-lg 
-						shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none 
-						focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-							<img src="/asset/icon-google-color.svg" className="h-6 w-6 mr-2" />
-							<span>{translate("login.google_title")}</span>
-						</button>
-
-						<button className="justify-center flex items-center bg-white border border-gray-300 rounded-lg 
-						shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none 
-						focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-							<img src="/asset/icon-linkden-color.svg" className="h-6 w-6 mr-2" />
-							<span>{translate("login.linkden_title")}</span>
-						</button>
-
-						<button className="justify-center flex items-center bg-white border border-gray-300 rounded-lg 
-						shadow-md px-6 py-2 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none 
-						focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-							<img src="/asset/icon-facebook-color.svg" className="h-6 w-6 mr-2" />
-							<span>{translate("login.facebook_title")}</span>
-						</button>
-					</div>
-
+                    <SocialAuthButton
+                        text1={translate("login.google_title")}
+                        text2={translate("login.linkden_title")}
+                        text3={translate("login.facebook_title")}
+                    />
 				</form>
 			</div>
 
 			<div>
 				<p className="mt-10 text-center text-sm/6 text-gray-500">{translate("login.not_a_member")} 
-					<a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+					<a href="/auth/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
 						{translate("login.sign_up")}
 					</a>
 				</p>

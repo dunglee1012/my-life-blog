@@ -31,12 +31,6 @@
         "google_title": "Login with Google",
         "linkden_title": "Login with Linkden",
         "facebook_title": "Login with Facebook",
-        "error_default": "Login failed.",
-        "error_user_not_found": "User not found.",
-        "error_wrong_password": "Incorrect password.",
-        "error_invalid_email": "Invalid email.",
-        "error_invalid_credential": "Incorrect email or password.",
-        "error_too_many_requests": "Too many requests, please try again later.",
         "not_a_member": "Not a member?",
         "sign_up": " Sign up"
     },
@@ -62,5 +56,30 @@
         "register": "Register",
         "sign_up": " Sign up",
         "send_reset_link": "Send Link"
+    },
+    "signup": {
+        "welcome_title": "Sign Up to Blog",
+        "email": "Email",
+        "password": "Password",
+        "submit": "Sign up",
+        "google_title": "Join with Google",
+        "linkden_title": "Join with Linkden",
+        "facebook_title": "Join with Facebook",
+        "already_member": "Already member?",
+        "login": " Why u even here?"
+    },
+    "error" : {
+        "error_default": "Authencication failed.",
+        "error_email_in_use": "Account existed with this email",
+        "error_weak_password": "Password is weak",
+        "error_invalid_email": "Invalid email",
+        "error_missing": "Email is empty",
+        "error_password_missing": "Password is empty",
+        "error_password_invalid": "Invalid password",
+        "error_password_regex": "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character.",
+        "error_user_not_found": "User not found.",
+        "error_wrong_password": "Incorrect password.",
+        "error_invalid_credential": "Incorrect email or password.",
+        "error_too_many_requests": "Too many requests, please try again later."
     }
 }
