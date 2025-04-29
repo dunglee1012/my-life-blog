@@ -3,7 +3,9 @@ import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@root/firebaseConfig";
 import { translate } from "@/locales/locale";
-import { validateLogin } from "@/utils/validateLogin";
+import { validateLogin, validateUser } from "@/utils/validateLogin";
+import { User } from "@/interfaces/user";
+import { createUser } from "@/services/users/userService";
 
 export const useSignUp = () => {
     const router = useRouter();
@@ -14,63 +16,40 @@ export const useSignUp = () => {
     const [passwordError, setPasswordError] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-
-    const [user, setUser] = useState({
-        email: "",
-        password: "",
-        firstname: "",
-        lastname: "",
-        phone: "",
-        address: "",
-        age: "",
-        created_at: new Date(),
-    });
-
-    const [userError, setUserError] = useState({
-        firstnameError: "",
-        lastnameError: "",
-        phoneError: "",
-        addressError: "",
-        ageError: "",
-    });
+    const [user, setUser] = useState({ firstname: "", lastname: "", phone: "", address: "", age: "" , dob: ""});
+    const [userError, setUserError] = useState({ firstnameError: "", lastnameError: "", phoneError: "", addressError: "", ageError: "", dobError: "" });
 
     const handleSignUp = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        // Reset error states
+        console.log("Form submitted");
+        console.log(user.dob);
+        setError("");
         setEmailError("");
         setPasswordError("");
-        setUserError({
-            firstnameError: "",
-            lastnameError: "",
-            phoneError: "",
-            addressError: "",
-            ageError: "",
-        });
-        setError("");
+        setUserError({ firstnameError: "", lastnameError: "", phoneError: "", addressError: "", ageError: "", dobError: "" });
 
-        // Validate email and password
-        const { isValid, errors } = validateLogin(email, password);
-        if (!isValid) {
-            if (errors.email) setEmailError(errors.email);
-            if (errors.password) setPasswordError(errors.password);
-            return;
-        }
-
-        // Validate user profile (e.g., firstname, lastname, etc.)
-        const { isProfileValid, profileErrors } = validateProfile(user);
-        if (!isProfileValid) {
-            setUserError(profileErrors); // Set profile-specific errors
-            return;
-        }
-
-        setLoading(true);
+        const  isAllValid = handleValidation();
+        
+        if (!isAllValid) return console.log("isAllValid",isAllValid);
 
         try {
-            // Create a new user in Firebase Authentication
-            await createUserWithEmailAndPassword(auth, email, password);
-
-            // Redirect to home page
+            const userCredential  = (await createUserWithEmailAndPassword(auth, email, password)).user;
+            
+            const userProfile: User = {
+                uid: userCredential.uid,
+                email,
+                firstname: user.firstname,
+                lastname: user.lastname,
+                phone: user.phone,
+                address: user.address,
+                age: user.age,
+                dob: new Date(user.dob),
+                createAt: new Date(),
+            };
+            console.log(userProfile);
+            const user1 = await createUser(userProfile);
+            
+            console.log(user1);
             router.push("/home");
         } catch (err: any) {
             let message = translate("error.error_default");
@@ -81,56 +60,52 @@ export const useSignUp = () => {
             } else if (err.code === "auth/invalid-email") {
                 message = translate("error.error_invalid_email");
             }
-
             setError(message);
         } finally {
             setLoading(false);
         }
     };
 
+    const handleValidation = (): boolean => {
+        const { isValid, errors } = validateLogin(email, password);
+        const { isUserValid, errorsUser } = validateUser(user);
+
+        if (!isValid) {
+            setEmailError(errors.email || "");
+            setPasswordError(errors.password || "");
+        }
+
+        if (!isUserValid) {
+            setUserError({
+                firstnameError: errorsUser.firstname || "",
+                lastnameError: errorsUser.lastname || "",
+                phoneError: errorsUser.phone || "",
+                ageError: errorsUser.age || "",
+                addressError: errorsUser.address || "",
+                dobError: errorsUser.dob || "",
+            });
+        }
+        console.log("isValid",isValid);
+        console.log("isUserValid",isUserValid);
+        return isValid && isUserValid;
+    };
+
+
     return {
         email,
         password,
         emailError,
         passwordError,
+        setEmail,
+        setEmailError,
+        setPassword,
+        setPasswordError,
         user,
         userError,
-        error,
-        setEmail,
-        setPassword,
         setUser,
         setUserError,
         handleSignUp,
+        error,
         loading,
     };
-};
-
-// Dummy validateProfile function for illustration
-const validateProfile = (user: any) => {
-    let isValid = true;
-    const profileErrors: any = {};
-
-    // Check if user profile fields are filled out
-    if (!user.firstname) {
-        isValid = false;
-        profileErrors.firstnameError = "First name is required.";
-    }
-    if (!user.lastname) {
-        isValid = false;
-        profileErrors.lastnameError = "Last name is required.";
-    }
-    if (!user.phone) {
-        isValid = false;
-        profileErrors.phoneError = "Phone number is required.";
-    }
-    if (!user.address) {
-        isValid = false;
-        profileErrors.addressError = "Address is required.";
-    }
-    if (!user.age) {
-        isValid = false;
-        profileErrors.ageError = "Age is required.";
-    }
-
-    return { isProfileValid: isValid, profileErrors };
 };

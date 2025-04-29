@@ -1,4 +1,4 @@
-export const formatDate = (isoDate: string): string => {
+export const formatDate = (isoDate: Date): string => {
     if (!isoDate) return "Unknown Date";
     return new Date(isoDate).toLocaleDateString("en-US", {
         year: "numeric",

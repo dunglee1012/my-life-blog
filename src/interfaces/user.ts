@@ -6,5 +6,6 @@ export interface User {
     address: string;
     email: string;
     age: string;
-    created_at: Date,
+    dob: Date,
+    createAt: Date,
 }

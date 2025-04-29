@@ -1,6 +1,7 @@
 "use client";
 import { translate } from "@/locales/locale";
 import { useForgotPassword } from "@/hooks/auth/useForgotPassword";
+import FormInput from "@/components/FormInput";
 
 const ForgotPasswordPage = () => {
 	const {
@@ -8,11 +9,12 @@ const ForgotPasswordPage = () => {
 		error,
 		emailError,
 		setEmail,
+		setEmailError,
 		handleForgotPassword,
 	} = useForgotPassword();
 	
 	return (
-		<div className="flex relative min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mb-30">
+		<div className="flex relative min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 			<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 				<img alt="Your Company" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
 					className="mx-auto h-10 w-auto" />
@@ -23,20 +25,16 @@ const ForgotPasswordPage = () => {
 
 			<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 				<form onSubmit={handleForgotPassword} className="space-y-6">
-					<div>
-						<label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
-							{translate("forgot_password.email")}
-						</label>
-						<div className="mt-2">
-							<input id="email" name="email" value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 
-								outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 
-								focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-							/>
-							{emailError && (<p className="mt-1 text-sm text-red-500">{emailError}</p>)}
-						</div>
-					</div>
+					<FormInput
+						label={translate("forgot_password.email")} name="email" type="text" value={email}
+						error={emailError} placeholder="Enter Your Email Here" inputClassName=""
+						onChange={(val) => {
+							setEmail(val);
+							if (emailError && val.trim() !== "") {
+								setEmailError("");
+							}
+						}}
+					/>
 
 					{error && <p className="text-sm text-red-500">{error}</p>}
 
@@ -50,10 +48,15 @@ const ForgotPasswordPage = () => {
 				</form>
 			</div>
 
-			<div>
-				<p className="mt-10 text-center text-sm/6 text-gray-500">{translate("login.not_a_member")}
+			<div className="text-center mt-10">
+				<p className="text-sm/6 text-gray-500">{translate("login.not_a_member")}
 					<a href="/auth/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
 						{translate("forgot_password.sign_up")}
+					</a>
+				</p>
+				<p className="text-sm/6 text-gray-500">
+					<a href="/auth" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+						{translate("forgot_password.login")}
 					</a>
 				</p>
 			</div>

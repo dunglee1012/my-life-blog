@@ -44,7 +44,9 @@
         "full_name": "Full Name",
         "email": "Email",
         "phone_number": "Phone Number",
-        "address": "Address"
+        "address": "Address",
+        "dob": "Date of birth",
+        "age": "Age"
     },
     "forgot_password": {
         "welcome_title": "Forgot something?",
@@ -55,7 +57,8 @@
         "forgot_password": "Forgot password?",
         "register": "Register",
         "sign_up": " Sign up",
-        "send_reset_link": "Send Link"
+        "send_reset_link": "Send Link",
+        "login": "Suddenly remember? Let's Blog"
     },
     "signup": {
         "welcome_title": "Sign Up to Blog",
@@ -66,7 +69,12 @@
         "linkden_title": "Join with Linkden",
         "facebook_title": "Join with Facebook",
         "already_member": "Already member?",
-        "login": " Why u even here?"
+        "login": " Why u even here?",
+        "or": "Or sign up down here",
+        "firstname": "First Name",
+        "lastname": "Last Name",
+        "age": "Age",
+        "address": "Address"
     },
     "error" : {
         "error_default": "Authencication failed.",

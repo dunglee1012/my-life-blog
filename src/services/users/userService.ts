@@ -1,7 +1,12 @@
 import { db } from "@root/firebaseConfig";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import { Timestamp } from "firebase/firestore";
 import { User } from "@/interfaces/user"
-
+const dateFormat = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+};
 export const getUserProfile = async (uid: string): Promise<User | null> => {
     const ref = doc(db, "users", uid);
     const snap = await getDoc(ref);
@@ -16,7 +21,8 @@ export const getUserProfile = async (uid: string): Promise<User | null> => {
             address: data.address,
             email: data.email,
             age: data.age,
-            created_at: data.created_at.toDate(),
+            dob: data.dob.toDate().toLocaleDateString("en-US", dateFormat),
+            createAt: data.createAt instanceof Timestamp ? data.createAt.toDate() : new Date(),
         };
         return userProfile;
     }
@@ -24,7 +30,7 @@ export const getUserProfile = async (uid: string): Promise<User | null> => {
 };
 
 export const createUser = async (user: User): Promise<User | null> => {
-    const { uid, email, firstname, lastname, phone, address, age } = user;
+    const { uid, email, firstname, lastname, phone, address, age, dob } = user;
 
     const userProfile: User = {
         uid,
@@ -34,7 +40,8 @@ export const createUser = async (user: User): Promise<User | null> => {
         phone,
         address,
         age,
-        created_at: new Date()
+        dob: new Date(),
+        createAt: new Date()
     };
 
     try {

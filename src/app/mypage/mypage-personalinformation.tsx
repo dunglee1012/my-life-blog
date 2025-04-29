@@ -5,6 +5,7 @@ import { translate } from "@/locales/locale";
 export default function PersonalInfo() {
 
     const { profile, loading } = useUserProfile();
+    console.log(profile);
 
     if (loading) {
         return (<FullScreenLoading/>
@@ -22,7 +23,7 @@ export default function PersonalInfo() {
                     <label className="block text-gray-700 font-medium">{translate("mypage.full_name")}</label>
                     <input
                         type="text"
-                        value={profile?.firstname}
+                        value={`${profile?.firstname} ${profile?.lastname}`}
                         className="mt-1 w-full border border-gray-300 rounded px-4 py-2"
                         readOnly
                     />
@@ -50,6 +51,24 @@ export default function PersonalInfo() {
                     <input
                         type="text"
                         value={profile?.address}
+                        className="mt-1 w-full border border-gray-300 rounded px-4 py-2"
+                        readOnly
+                    />
+                </div>
+                <div>
+                    <label className="block text-gray-700 font-medium">{translate("mypage.age")}</label>
+                    <input
+                        type="text"
+                        value={profile?.age}
+                        className="mt-1 w-full border border-gray-300 rounded px-4 py-2"
+                        readOnly
+                    />
+                </div>
+                <div>
+                    <label className="block text-gray-700 font-medium">{translate("mypage.dob")}</label>
+                    <input
+                        type="text"
+                        value={profile?.dob}
                         className="mt-1 w-full border border-gray-300 rounded px-4 py-2"
                         readOnly
                     />

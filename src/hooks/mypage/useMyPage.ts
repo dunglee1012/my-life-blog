@@ -24,7 +24,7 @@ export const useMyPage = () => {
             await signOut(auth);
             sayGoodbye();
             setTimeout(() => {
-                window.location.href = "/login";
+                window.location.href = "/auth";
             }, 2000);
         } catch (error) {
             console.error("Sign out error: ", error);
